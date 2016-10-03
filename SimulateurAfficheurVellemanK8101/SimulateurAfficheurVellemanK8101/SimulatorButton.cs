@@ -15,7 +15,6 @@ namespace SimulateurAfficheurVellemanK8101
         private const float DEFAULT_PEN_WIDTH = 3f;
         #endregion
 
-
         #region Fields
         private Rectangle _rect;
         private Pen _pen;

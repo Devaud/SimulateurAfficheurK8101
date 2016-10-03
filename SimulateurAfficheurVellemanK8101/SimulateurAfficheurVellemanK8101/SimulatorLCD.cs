@@ -13,14 +13,14 @@ namespace SimulateurAfficheurVellemanK8101
         #region const
         // It's constant but can't be declared constant
         private static Point DEFAULT_LOCATION = new Point(0, 0);
-        private static Size DEFAULT_SIZE = new Size(150, 90);
+        private static Size DEFAULT_SIZE = new Size(138, 74);
         private static Color DEFAULT_PEN_COLOR = Color.Black;
         private static Color DEFAULT_BRUSH_COLOR = Color.White;
 
         private const float DEFAULT_PEN_WIDTH = 1f;
         private const int ADAPTIF_RATER = 5;
         #endregion
-        
+
         #region Fields
         private Rectangle _lcd;
         private Rectangle _backColorLcd;
@@ -62,12 +62,14 @@ namespace SimulateurAfficheurVellemanK8101
         #endregion
 
         #region Constructor
-        public SimulatorLCD() : this(DEFAULT_LOCATION)
+        public SimulatorLCD()
+            : this(DEFAULT_LOCATION)
         {
 
         }
 
-        public SimulatorLCD(Point location) :this(location, DEFAULT_SIZE)
+        public SimulatorLCD(Point location)
+            : this(location, DEFAULT_SIZE)
         {
 
         }
