@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace SimulatorK8101
 {
-    class SimulatorButton
+    public class SimulatorButton
     {
         #region Const
         // It's constant but can't be declared constant

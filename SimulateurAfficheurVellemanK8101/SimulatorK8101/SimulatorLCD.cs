@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace SimulatorK8101
 {
-    class SimulatorLCD
+    public class SimulatorLCD
     {
         #region const
         // It's constant but can't be declared constant

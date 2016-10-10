@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace SimulatorK8101
 {
-    class SimulatorK8101
+    public class SimulatorK8101
     {
         #region Const
         public static Size DEFAULT_SIZE = new Size(337, 380);

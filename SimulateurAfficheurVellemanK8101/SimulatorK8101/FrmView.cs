@@ -19,19 +19,48 @@ namespace SimulatorK8101
 {
     public partial class FrmView : Form
     {
-        SimulatorK8101 sk;
+        #region Fields
+        private SimulatorK8101 _sk;
+        private Timer _updater;
+        #endregion
 
+        #region Properties
+        /// <summary>
+        /// Get or set the updater timer
+        /// </summary>
+        public Timer Updater
+        {
+            get { return _updater; }
+            set { _updater = value; }
+        }
+
+        /// <summary>
+        /// Get or set the simulatorK8101
+        /// </summary>
+        public  SimulatorK8101 Sk
+        {
+            get { return _sk; }
+            set { _sk = value; }
+        }
+        #endregion
+
+        #region Constructor
         public FrmView()
         {
             InitializeComponent();
         }
+        #endregion
 
-        private void Form1_Load(object sender, EventArgs e)
+        #region Personal Methods
+        private void InitApplication()
         {
             Point location = new Point(DynamiqueLocation(this.Size.Width, 5), DynamiqueLocation(this.Size.Height, 20));
             Size size = new Size(DynamiqueLocation(this.Size.Width, 85), DynamiqueLocation(this.Size.Height, 65));
-            sk = new SimulatorK8101(location, size);
-            Refresh();
+            this.Sk = new SimulatorK8101(location, size);
+
+            this.Updater = new Timer();
+            this.Updater.Interval = 1;
+            this.Updater.Tick += UpdaterTick;
         }
 
         private int DynamiqueLocation(int start, int perCentUsed)
@@ -39,9 +68,20 @@ namespace SimulatorK8101
             return (start * perCentUsed) / 100;
         }
 
+        private void UpdaterTick(object sender, EventArgs e)
+        {
+            Refresh();
+        }
+        #endregion
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.InitApplication();
+        }
+
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            sk.Draw(e);
+            this.Sk.Draw(e);
         }
 
         private void TSMIQuit_Click(object sender, EventArgs e)
