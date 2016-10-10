@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SimulateurAfficheurVellemanK8101
+namespace SimulatorK8101
 {
     static class Program
     {

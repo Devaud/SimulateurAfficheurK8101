@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SimulateurAfficheurVellemanK8101
+namespace SimulatorK8101
 {
     class SimulatorK8101
     {
@@ -60,6 +60,7 @@ namespace SimulateurAfficheurVellemanK8101
         {
 
         }
+
         public SimulatorK8101(Point location, Size size)
         {
             this.Rect = new Rectangle(location, size);

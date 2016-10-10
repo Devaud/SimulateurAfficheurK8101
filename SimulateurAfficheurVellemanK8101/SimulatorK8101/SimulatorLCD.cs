@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SimulateurAfficheurVellemanK8101
+namespace SimulatorK8101
 {
     class SimulatorLCD
     {

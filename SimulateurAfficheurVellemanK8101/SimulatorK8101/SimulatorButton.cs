@@ -1,7 +1,14 @@
-﻿using System.Drawing;
+﻿/* *
+ * Project : SimulatorK8101
+ * 
+ * 
+ * 
+ * */
+
+using System.Drawing;
 using System.Windows.Forms;
 
-namespace SimulateurAfficheurVellemanK8101
+namespace SimulatorK8101
 {
     class SimulatorButton
     {
