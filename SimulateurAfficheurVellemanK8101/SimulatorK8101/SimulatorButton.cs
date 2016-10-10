@@ -1,8 +1,10 @@
 ﻿/* *
- * Project : SimulatorK8101
- * 
- * 
- * 
+ * Project     : SimulatorK8101
+ * Class       : SimulatorButton
+ * Description : Manage the button
+ * Author      : Alan Devaud
+ * Date        : 3.10.2016
+ * Version     : 1.0
  * */
 
 using System.Drawing;
@@ -29,34 +31,52 @@ namespace SimulatorK8101
         #endregion
 
         #region Properties
+        /// <summary>
+        /// Get or set the brush
+        /// </summary>
         public Brush Brush
         {
             get { return _brush; }
             set { _brush = value; }
         }
 
+        /// <summary>
+        /// Get or set the pen
+        /// </summary>
         public Pen Pen
         {
             get { return _pen; }
             set { _pen = value; }
         }
 
+        /// <summary>
+        /// Get the pen color
+        /// </summary>
         public Color Color
         {
             get { return _pen.Color; }
         }
-
+        
+        /// <summary>
+        /// Get or set the rectangle
+        /// </summary>
         public Rectangle Rect
         {
             get { return _rect; }
             set { _rect = value; }
         }
 
+        /// <summary>
+        /// Get the location
+        /// </summary>
         public Point Location
         {
             get { return _rect.Location; }
         }
 
+        /// <summary>
+        /// Get the size
+        /// </summary>
         public Size Size
         {
             get { return _rect.Size; }
@@ -64,18 +84,30 @@ namespace SimulatorK8101
         #endregion
 
         #region Constructor
+        /// <summary>
+        /// Create new button with default location and default size
+        /// </summary>
         public SimulatorButton()
             : this(DEFAULT_LOCATION)
         {
 
         }
 
+        /// <summary>
+        /// Create new button with location and default size
+        /// </summary>
+        /// <param name="location">Button location</param>
         public SimulatorButton(Point location)
             : this(location, DEFAULT_SIZE)
         {
 
         }
 
+        /// <summary>
+        /// Create new button with location and size
+        /// </summary>
+        /// <param name="location">Button location</param>
+        /// <param name="size">Button size</param>
         public SimulatorButton(Point location, Size size)
         {
             this.Rect = new Rectangle(location, size);
@@ -85,6 +117,10 @@ namespace SimulatorK8101
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Draw the button
+        /// </summary>
+        /// <param name="pe"></param>
         public void Draw(PaintEventArgs pe)
         {
             pe.Graphics.DrawEllipse(this.Pen, this.Rect);

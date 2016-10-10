@@ -1,4 +1,11 @@
-﻿using System;
+﻿/* *
+ * Project     : SimulatorK8101
+ * Description : Simulate the Velleman K8101
+ * Author      : Alan Devaud & Dylan Wacker
+ * Date        : 3.10.2016
+ * Version     : 1.0
+ * */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
