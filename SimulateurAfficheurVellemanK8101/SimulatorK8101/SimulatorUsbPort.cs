@@ -29,9 +29,6 @@ namespace SimulatorK8101
         #region Fields
         private SerialPort _sp;
         private string _comPortUse;
-
-
-
         #endregion
 
         #region Properties
@@ -80,7 +77,6 @@ namespace SimulatorK8101
                     break;
                 }
                 NumberComPort++;
-                ComPortUse = "COM" + NumberComPort + 1;
             }
             this.Sp = new SerialPort(ComPortUse);
         }

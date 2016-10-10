@@ -55,6 +55,7 @@
     <Compile Include="SimulatorButton.cs" />
     <Compile Include="SimulatorK8101.cs" />
     <Compile Include="SimulatorLCD.cs" />
+    <Compile Include="SimulatorUsbPort.cs" />
     <EmbeddedResource Include="FrmView.resx">
       <DependentUpon>FrmView.cs</DependentUpon>
     </EmbeddedResource>
