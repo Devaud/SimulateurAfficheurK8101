@@ -23,9 +23,16 @@ namespace SimulatorK8101
         private Pen _pen;
         private SimulatorButton _simButton;
         private SimulatorLCD _simLCD;
+        private SimulatorUsbPort _simUsbPort;
         #endregion
 
         #region Properties
+        public SimulatorUsbPort SimUsbPort
+        {
+            get { return _simUsbPort; }
+            set { _simUsbPort = value; }
+        }
+
         /// <summary>
         /// Get or set the Simulator LCD
         /// </summary>
@@ -98,6 +105,8 @@ namespace SimulatorK8101
             // Place and resize the simulator LCDk with "dynamique" coordonate
             this.SimLCD = new SimulatorLCD(new Point(location.X + (size.Width * 5 / 100), location.Y + size.Height * 20 / 100),
                                            new Size(size.Width * 90 / 100, size.Height * 75 / 100));
+
+            this.SimUsbPort = new SimulatorUsbPort();
         }
         #endregion
 

@@ -91,7 +91,8 @@ namespace SimulatorK8101
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            if (!this.Sk.SimUsbPort.Connected())
+                this.Sk.SimUsbPort.Connect();
         }
 
     }
