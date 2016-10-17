@@ -21,9 +21,11 @@ namespace SimulatorK8101
         // set the serial baud rate.
         private const int DEFAULT_BAUDRATE = 9600;
         // set the standard number of stopbits per byte.
-        private const int DEFAULT_STOPBITS = 0; // !!!! Chercher la valeur !!!!
+        private const StopBits DEFAULT_STOPBITS = StopBits.One;//
+        // set the standard data bits
+        private const byte DEFAULT_VALUE_DATABITS = 8;
         // set the number of milliseconds before a timeout occurs when a read operation does not finish.
-        private const int DEFAULT_READTIMEOUT = 0; // miliseconds
+        private const int DEFAULT_READTIMEOUT = 100; // miliseconds
         #endregion
 
         #region Fields
@@ -78,11 +80,16 @@ namespace SimulatorK8101
                 }
                 NumberComPort++;
             }
-            this.Sp = new SerialPort(ComPortUse);
+            this.Sp = new SerialPort(ComPortUse,DEFAULT_BAUDRATE);
+            Sp.StopBits = DEFAULT_STOPBITS;
+            Sp.DataBits = DEFAULT_VALUE_DATABITS;
+            if (Sp.IsOpen == false) 
+                Sp.Open();
+            Sp.Close();
         }
 
         /// <summary>
-        /// Send data to the special frame
+        /// Send data to the serial frame
         /// </summary>
         public void SendData()
         {
@@ -90,11 +97,11 @@ namespace SimulatorK8101
         }
 
         /// <summary>
-        /// Receive data from a special frame
+        /// Receive data from a serial frame
         /// </summary>
         public void ReceiveData()
         {
-
+            
         }
 
         #endregion
