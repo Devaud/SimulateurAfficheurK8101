@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller.cs" />
     <Compile Include="FrmView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -52,7 +53,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimulatorButton.cs" />
+    <Compile Include="SimulatorButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SimulatorK8101.cs" />
     <Compile Include="SimulatorLCD.cs" />
     <Compile Include="SimulatorUsbPort.cs" />

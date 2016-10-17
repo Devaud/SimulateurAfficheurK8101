@@ -56,7 +56,7 @@ namespace SimulatorK8101
         {
             get { return _pen.Color; }
         }
-        
+
         /// <summary>
         /// Get or set the rectangle
         /// </summary>
