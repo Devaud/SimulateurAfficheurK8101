@@ -31,7 +31,8 @@ namespace SimulatorK8101
         private const Parity DEFAULT_PARITY = Parity.None;
         private const int START_BUFFER = 170;
         private const int END_BUFFER = 0x55;
-        private const string PATH_MANAGEMENT_SCOPE = @"root\CIMV2";
+        private const string PATH_MANAGEMENT_SCOPE = "root\\CIMV2";
+        private const string MANAGEMENT_PATH = "Win32_SerialPort";
         #endregion
 
         #region Fields
@@ -66,8 +67,14 @@ namespace SimulatorK8101
             this.Sp = new SerialPort();
             this.ManageScope = new ManagementScope(PATH_MANAGEMENT_SCOPE);
             ObjectGetOptions o = new ObjectGetOptions(null, System.TimeSpan.MaxValue, true);
-            ManagementPath p = new ManagementPath("Win32_SerialPort");
+            ManagementPath p = new ManagementPath(MANAGEMENT_PATH);
             this.OsClass = new ManagementClass(this.ManageScope, p, o);
+            this.OsClass.Properties.Add("PNPDeviceID", "VID_10CF&PID_8101");
+            this.OsClass.Properties.Add("SettableBaudRate", DEFAULT_BAUDRATE);
+            this.OsClass.Properties.Add("SettableDataBits", DEFAULT_VALUE_DATABITS);
+            this.OsClass.Properties.Add("SettableParity", DEFAULT_PARITY);
+            this.OsClass.Properties.Add("SettableStopBits", DEFAULT_STOPBITS);
+            this.ManageScope.Options.EnablePrivileges = true;
         }
 
         #endregion
@@ -75,37 +82,59 @@ namespace SimulatorK8101
         #region Methods
         public void Disconnect()
         {
-            this.Sp.Close();
+            //this.Sp.Close();
         }
 
         public void Connect()
         {
             try
             {
-                this.Sp.BaudRate = DEFAULT_BAUDRATE;
+                /*this.Sp.BaudRate = DEFAULT_BAUDRATE;
                 this.Sp.Parity = DEFAULT_PARITY;
                 this.Sp.StopBits = DEFAULT_STOPBITS;
                 this.Sp.DataBits = DEFAULT_VALUE_DATABITS;
                 this.Sp.PortName = this.ConnectToPort();
-                this.Sp.Open();
-                this.Sp.Write("VID_10CF&PID_8101");
+                this.Sp.Handshake = Handshake.RequestToSend;
+                this.Sp.DataReceived += Sp_DataReceived;*/
+                this.OsClass.Properties.Add("DeviceID", this.Sp.PortName);
+                this.ManageScope.Connect();
+                
+                //this.Sp.Open();
+               
+                Console.WriteLine("----------------------------------");
+                PropertyDataCollection properties = this.OsClass.Properties;
+                Console.WriteLine("Properties : ");
+                foreach (PropertyData property in properties)
+                {
+                    Console.WriteLine(property.Name + " : " + property.Value);
+                }
+                Console.WriteLine("----------------------------------");
+
+
+               // this.Sp.Write("VID_10CF&PID_8101");
                 MessageBox.Show("Connected");
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show(e.Message);
             }
 
+            /*Console.WriteLine("----------------------------------");
             PropertyDataCollection properties = this.OsClass.Properties;
             properties["PNPDeviceID"].Value = "VID_10CF&PID_8101";
             properties["DeviceID"].Value = this.Sp.PortName;
-            /*Console.WriteLine("Properties : ");
+            Console.WriteLine("Properties : ");
             foreach (PropertyData property in properties)
             {
                 Console.WriteLine(property.Name + " : " + property.Value);
             }
             Console.WriteLine("----------------------------------");*/
 
+        }
+
+        void Sp_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            //Console.WriteLine("Received : " + (sender as SerialPort).ReadLine());
         }
 
         public bool Connected()
