@@ -8,6 +8,12 @@ namespace SimuK8101
 {
     public class SimuK8101
     {
+        public enum TextSize
+        {
+            Small,
+            Large,
+        }
+
         public SimuK8101()
         {
 
