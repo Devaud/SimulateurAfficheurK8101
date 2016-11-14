@@ -8,14 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Velleman.Kits;
+using SimuVelleman.Kits;
 
 namespace TestProgram
 {
     public partial class Form1 : Form
     {
-        K8101 display;
+        SimuK8101 display;
 
-        public K8101 Display
+        public SimuK8101 Display
         {
             get { return display; }
             set { display = value; }
@@ -24,7 +25,7 @@ namespace TestProgram
         public Form1()
         {
             InitializeComponent();
-            Display = new K8101();
+            Display = new SimuK8101();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -32,6 +33,10 @@ namespace TestProgram
             try
             {
                 Display.Connect();
+                if (display.Connected())
+                {
+                    MessageBox.Show("Connected");
+                }
             } 
             catch (Exception ex)
             {

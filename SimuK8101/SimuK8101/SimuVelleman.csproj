@@ -7,7 +7,7 @@
     <ProjectGuid>{C71818A4-BA55-4E0C-B887-109FCB0B7EAB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SimuK8101</RootNamespace>
+    <RootNamespace>SimuVelleman</RootNamespace>
     <AssemblyName>SimuK8101</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

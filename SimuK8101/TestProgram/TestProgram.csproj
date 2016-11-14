@@ -35,6 +35,9 @@
     <Reference Include="K8101">
       <HintPath>C:\Program Files (x86)\Velleman\K8101\Test Program\K8101.dll</HintPath>
     </Reference>
+    <Reference Include="SimuK8101">
+      <HintPath>..\SimuK8101\bin\Debug\SimuK8101.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
