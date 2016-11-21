@@ -30,12 +30,13 @@
         {
             this.btnSendMessage = new System.Windows.Forms.Button();
             this.tbxMessage = new System.Windows.Forms.TextBox();
+            this.btnConnection = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSendMessage
             // 
-            this.btnSendMessage.Location = new System.Drawing.Point(16, 47);
-            this.btnSendMessage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSendMessage.Location = new System.Drawing.Point(16, 139);
+            this.btnSendMessage.Margin = new System.Windows.Forms.Padding(4);
             this.btnSendMessage.Name = "btnSendMessage";
             this.btnSendMessage.Size = new System.Drawing.Size(279, 28);
             this.btnSendMessage.TabIndex = 0;
@@ -45,20 +46,32 @@
             // 
             // tbxMessage
             // 
-            this.tbxMessage.Location = new System.Drawing.Point(16, 15);
-            this.tbxMessage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxMessage.Location = new System.Drawing.Point(13, 109);
+            this.tbxMessage.Margin = new System.Windows.Forms.Padding(4);
             this.tbxMessage.Name = "tbxMessage";
             this.tbxMessage.Size = new System.Drawing.Size(277, 22);
             this.tbxMessage.TabIndex = 1;
+            // 
+            // btnConnection
+            // 
+            this.btnConnection.Location = new System.Drawing.Point(16, 13);
+            this.btnConnection.Margin = new System.Windows.Forms.Padding(4);
+            this.btnConnection.Name = "btnConnection";
+            this.btnConnection.Size = new System.Drawing.Size(279, 28);
+            this.btnConnection.TabIndex = 2;
+            this.btnConnection.Text = "Connexion";
+            this.btnConnection.UseVisualStyleBackColor = true;
+            this.btnConnection.Click += new System.EventHandler(this.btnConnection_Click);
             // 
             // FrmView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(655, 502);
+            this.Controls.Add(this.btnConnection);
             this.Controls.Add(this.tbxMessage);
             this.Controls.Add(this.btnSendMessage);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmView";
             this.Text = "Test programme";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -71,6 +84,7 @@
 
         private System.Windows.Forms.Button btnSendMessage;
         private System.Windows.Forms.TextBox tbxMessage;
+        private System.Windows.Forms.Button btnConnection;
     }
 }
 

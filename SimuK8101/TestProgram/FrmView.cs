@@ -14,7 +14,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Velleman.Kits;
 using SimuVelleman.Kits;
 using System.Net.Sockets;
 using System.Net;
@@ -25,7 +24,7 @@ namespace TestProgram
     {
         #region Fields
         SimuK8101 display;
-        Socket ClientSocket;
+       // Socket ClientSocket;
         #endregion
 
         #region Properties
@@ -51,7 +50,7 @@ namespace TestProgram
         /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
-            ClientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            /*ClientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             try
             {
                 ClientSocket.Connect(IPAddress.Parse("127.0.0.1"), 500);
@@ -63,7 +62,8 @@ namespace TestProgram
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
+            }*/
+            this.Display = new SimuK8101();
         }
 
         /// <summary>
@@ -72,12 +72,12 @@ namespace TestProgram
         /// <param name="message"></param>
         private void SendMessage(string message)
         {
-            byte[] msg = Encoding.UTF8.GetBytes(message);
+            /*byte[] msg = Encoding.UTF8.GetBytes(message);
             int DtSent = ClientSocket.Send(msg, msg.Length, SocketFlags.None);
             if (DtSent == 0)
             {
                 MessageBox.Show("Aucune donnée n'a été envoyée");
-            }
+            }*/
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace TestProgram
         /// <param name="e"></param>
         private void btnSendMessage_Click(object sender, EventArgs e)
         {
-            this.SendMessage(tbxMessage.Text);
+            //this.SendMessage(tbxMessage.Text);
         }
 
         /// <summary>
@@ -97,8 +97,13 @@ namespace TestProgram
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            Display.DrawText("salut", SimuK8101.TextSize.Small, 10, 10, 10);
+            //Display.DrawText("salut", SimuK8101.TextSize.Small, 10, 10, 10);
 
+        }
+
+        private void btnConnection_Click(object sender, EventArgs e)
+        {
+            this.Display.Connect();
         }
     }
 }
