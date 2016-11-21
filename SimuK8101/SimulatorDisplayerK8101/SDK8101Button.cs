@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace SimulatorDisplayerK8101
 {
-    class SimuDisplayButtonK8101
+    public class SDK8101Button
     {
         #region Const
         // Can't be declared const
@@ -31,7 +31,7 @@ namespace SimulatorDisplayerK8101
         /// </summary>
         public static Size DEFAULT_SIZE
         {
-            get { return SimuDisplayButtonK8101._DEFAULT_SIZE; }
+            get { return SDK8101Button._DEFAULT_SIZE; }
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace SimulatorDisplayerK8101
         /// Create new button with personnal location and DEFAULT_SIZE
         /// </summary>
         /// <param name="location">Button position</param>
-        public SimuDisplayButtonK8101(Point location)
+        public SDK8101Button(Point location)
             : this(location, DEFAULT_SIZE)
         {
 
@@ -78,7 +78,7 @@ namespace SimulatorDisplayerK8101
         /// </summary>
         /// <param name="location">Button position</param>
         /// <param name="size">Button size</param>
-        public SimuDisplayButtonK8101(Point location, Size size)
+        public SDK8101Button(Point location, Size size)
         {
             this.Rect = new Rectangle(location, size);
             this.Pen = new Pen(DEFAULT_PEN_COLOR, DEFAULT_PEN_WIDTH);

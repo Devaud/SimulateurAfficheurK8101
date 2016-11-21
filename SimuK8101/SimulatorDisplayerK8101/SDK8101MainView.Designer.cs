@@ -1,6 +1,6 @@
 ﻿namespace SimulatorDisplayerK8101
 {
-    partial class Form1
+    partial class SDK8101MainView
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -34,17 +34,22 @@
             this.tsmiSimulator = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiConnect = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDisconnect = new System.Windows.Forms.ToolStripMenuItem();
+            this.stsInformations = new System.Windows.Forms.StatusStrip();
+            this.tsslConnectInformation = new System.Windows.Forms.ToolStripStatusLabel();
             this.mspGeneral.SuspendLayout();
+            this.stsInformations.SuspendLayout();
             this.SuspendLayout();
             // 
             // mspGeneral
             // 
+            this.mspGeneral.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mspGeneral.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiFile,
             this.tsmiSimulator});
             this.mspGeneral.Location = new System.Drawing.Point(0, 0);
             this.mspGeneral.Name = "mspGeneral";
-            this.mspGeneral.Size = new System.Drawing.Size(493, 24);
+            this.mspGeneral.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.mspGeneral.Size = new System.Drawing.Size(657, 28);
             this.mspGeneral.TabIndex = 0;
             this.mspGeneral.Text = "menuStrip1";
             // 
@@ -53,7 +58,7 @@
             this.tsmiFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiQuit});
             this.tsmiFile.Name = "tsmiFile";
-            this.tsmiFile.Size = new System.Drawing.Size(37, 20);
+            this.tsmiFile.Size = new System.Drawing.Size(44, 24);
             this.tsmiFile.Text = "&File";
             // 
             // tsmiQuit
@@ -65,13 +70,14 @@
             this.tsmiQuit.Text = "&Quit";
             this.tsmiQuit.Click += new System.EventHandler(this.tsmiQuit_Click);
             // 
+            this.tsmiQuit.Size = new System.Drawing.Size(165, 26);
             // tsmiSimulator
             // 
             this.tsmiSimulator.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiConnect,
             this.tsmiDisconnect});
             this.tsmiSimulator.Name = "tsmiSimulator";
-            this.tsmiSimulator.Size = new System.Drawing.Size(70, 20);
+            this.tsmiSimulator.Size = new System.Drawing.Size(85, 24);
             this.tsmiSimulator.Text = "&Simulator";
             // 
             // tsmiConnect
@@ -79,7 +85,7 @@
             this.tsmiConnect.Image = global::SimulatorDisplayerK8101.Properties.Resources.connect;
             this.tsmiConnect.Name = "tsmiConnect";
             this.tsmiConnect.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.tsmiConnect.Size = new System.Drawing.Size(175, 22);
+            this.tsmiConnect.Size = new System.Drawing.Size(210, 26);
             this.tsmiConnect.Text = "&Connect";
             this.tsmiConnect.Click += new System.EventHandler(this.tsmiConnect_Click);
             // 
@@ -89,23 +95,45 @@
             this.tsmiDisconnect.Image = global::SimulatorDisplayerK8101.Properties.Resources.disconnect;
             this.tsmiDisconnect.Name = "tsmiDisconnect";
             this.tsmiDisconnect.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.tsmiDisconnect.Size = new System.Drawing.Size(175, 22);
+            this.tsmiDisconnect.Size = new System.Drawing.Size(210, 26);
             this.tsmiDisconnect.Text = "&Disconnect";
+            this.tsmiDisconnect.Click += new System.EventHandler(this.tsmiDisconnect_Click);
             // 
-            // Form1
+            // stsInformations
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.stsInformations.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.stsInformations.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsslConnectInformation});
+            this.stsInformations.Location = new System.Drawing.Point(0, 446);
+            this.stsInformations.Name = "stsInformations";
+            this.stsInformations.Size = new System.Drawing.Size(657, 25);
+            this.stsInformations.TabIndex = 1;
+            this.stsInformations.Text = "statusStrip1";
+            // 
+            // tsslConnectInformation
+            // 
+            this.tsslConnectInformation.Name = "tsslConnectInformation";
+            this.tsslConnectInformation.Size = new System.Drawing.Size(102, 20);
+            this.tsslConnectInformation.Text = "No connected";
+            // 
+            // SDK8101MainView
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 383);
+            this.ClientSize = new System.Drawing.Size(657, 471);
+            this.Controls.Add(this.stsInformations);
             this.Controls.Add(this.mspGeneral);
             this.MainMenuStrip = this.mspGeneral;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "SDK8101MainView";
+            this.Text = "Simulator Display K8101";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
             this.mspGeneral.ResumeLayout(false);
             this.mspGeneral.PerformLayout();
+            this.stsInformations.ResumeLayout(false);
+            this.stsInformations.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,6 +147,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiSimulator;
         private System.Windows.Forms.ToolStripMenuItem tsmiConnect;
         private System.Windows.Forms.ToolStripMenuItem tsmiDisconnect;
+        private System.Windows.Forms.StatusStrip stsInformations;
+        private System.Windows.Forms.ToolStripStatusLabel tsslConnectInformation;
 
     }
 }

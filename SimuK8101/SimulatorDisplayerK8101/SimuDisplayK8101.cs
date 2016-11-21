@@ -8,13 +8,14 @@ using System.Windows.Forms;
 
 namespace SimulatorDisplayerK8101
 {
-    class SimuDisplayK8101
+    public class SimuDisplayK8101
     {
         #region Fields
         private Rectangle _rect;
         private Brush _brush;
         private Pen _pen;
-        private SimuDisplayButtonK8101 _simuButton;
+        private SDK8101Button _simuButton;
+        private SDK8101Usb _simuUsb;
         private SDKLCDK8101 _simuLCD;
         #endregion
 
@@ -29,9 +30,16 @@ namespace SimulatorDisplayerK8101
         }
 
         /// <summary>
+        public SDK8101Usb SimuUsb
+        {
+            get { return _simuUsb; }
+            set { _simuUsb = value; }
+        }
+
+        /// <summary>
         /// Get or set the SimuButton
         /// </summary>
-        public SimuDisplayButtonK8101 SimuButton
+        public SDK8101Button SimuButton
         {
             get { return _simuButton; }
             set { _simuButton = value; }
@@ -76,13 +84,22 @@ namespace SimulatorDisplayerK8101
             this.Rect = new Rectangle(location, size);
             this.Pen = new Pen(Color.Black, 2);
             this.Brush = new SolidBrush(Color.Gray);
-            Point locationButton = new Point(location.X + (size.Width / 2 - SimuDisplayButtonK8101.DEFAULT_SIZE.Width / 2), location.Y + 10);
-            this.SimuButton = new SimuDisplayButtonK8101(locationButton);
+            Point locationButton = new Point(location.X + (size.Width / 2 - SDK8101Button.DEFAULT_SIZE.Width / 2), location.Y + 10);
+            this.SimuButton = new SDK8101Button(locationButton);
             this.SimuLCD = new SDKLCDK8101();
+            this.SimuUsb = new SDK8101Usb();
         }
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Connect the simuUsb
+        /// </summary>
+        public void Connect()
+        {
+            this.SimuUsb.Connect();
+        }
+
         /// <summary>
         /// Draw the SimuDisplayK8101
         /// </summary>
@@ -102,6 +119,14 @@ namespace SimulatorDisplayerK8101
         public void Clicked(Point mousePosition)
         {
             this.SimuButton.Clicked(mousePosition);
+        }
+
+        /// <summary>
+        /// Disconnect the sdk8101
+        /// </summary>
+        public void Disconnect()
+        {
+            this.SimuUsb.Disconnect();
         }
         #endregion
     }

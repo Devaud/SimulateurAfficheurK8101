@@ -17,8 +17,17 @@ using System.Net;
 
 namespace SimuVelleman.Kits
 {
+
+
     public class SimuK8101
     {
+        #region Enumarate
+        public enum TextSize
+        {
+            Small,
+            Large,
+        }
+        #endregion
         #region Fields
         private const string IP_SERVE = "127.0.0.1";
         private const int PORT_SERVE = 500;
@@ -123,6 +132,28 @@ namespace SimuVelleman.Kits
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+            }
+        }
+
+        public void DrawText(string str, SimuK8101.TextSize size, byte x1, byte y1, byte x2)
+        {
+            try
+            {
+                /*byte[] buffer = new byte[513];
+                buffer[1] = x1;
+                buffer[2] = y1; */
+                byte[] data = Encoding.ASCII.GetBytes(str);
+                NetworkStream stream = this.TcpClient.GetStream();
+                stream.Write(data, 0, data.Length);
+                stream.Close();
+            }
+            catch (ArgumentNullException e)
+            {
+                Console.WriteLine("ArgumentNullException: {0}", e);
+            }
+            catch (SocketException e)
+            {
+                Console.WriteLine("SocketException: {0}", e);
             }
 
         }

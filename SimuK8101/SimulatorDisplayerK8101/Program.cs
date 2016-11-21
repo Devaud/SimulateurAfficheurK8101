@@ -16,7 +16,7 @@ namespace SimulatorDisplayerK8101
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new SDK8101MainView());
         }
     }
 }
