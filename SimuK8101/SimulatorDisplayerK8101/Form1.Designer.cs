@@ -30,8 +30,8 @@
         {
             this.mspGeneral = new System.Windows.Forms.MenuStrip();
             this.tsmiFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiSimulator = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiQuit = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSimulator = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiConnect = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDisconnect = new System.Windows.Forms.ToolStripMenuItem();
             this.mspGeneral.SuspendLayout();
@@ -56,6 +56,15 @@
             this.tsmiFile.Size = new System.Drawing.Size(37, 20);
             this.tsmiFile.Text = "&File";
             // 
+            // tsmiQuit
+            // 
+            this.tsmiQuit.Image = global::SimulatorDisplayerK8101.Properties.Resources.door_out;
+            this.tsmiQuit.Name = "tsmiQuit";
+            this.tsmiQuit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.tsmiQuit.Size = new System.Drawing.Size(140, 22);
+            this.tsmiQuit.Text = "&Quit";
+            this.tsmiQuit.Click += new System.EventHandler(this.tsmiQuit_Click);
+            // 
             // tsmiSimulator
             // 
             this.tsmiSimulator.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -65,15 +74,6 @@
             this.tsmiSimulator.Size = new System.Drawing.Size(70, 20);
             this.tsmiSimulator.Text = "&Simulator";
             // 
-            // tsmiQuit
-            // 
-            this.tsmiQuit.Image = global::SimulatorDisplayerK8101.Properties.Resources.door_out;
-            this.tsmiQuit.Name = "tsmiQuit";
-            this.tsmiQuit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.tsmiQuit.Size = new System.Drawing.Size(152, 22);
-            this.tsmiQuit.Text = "&Quit";
-            this.tsmiQuit.Click += new System.EventHandler(this.tsmiQuit_Click);
-            // 
             // tsmiConnect
             // 
             this.tsmiConnect.Image = global::SimulatorDisplayerK8101.Properties.Resources.connect;
@@ -81,6 +81,7 @@
             this.tsmiConnect.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.tsmiConnect.Size = new System.Drawing.Size(175, 22);
             this.tsmiConnect.Text = "&Connect";
+            this.tsmiConnect.Click += new System.EventHandler(this.tsmiConnect_Click);
             // 
             // tsmiDisconnect
             // 

@@ -15,7 +15,12 @@ namespace SimulatorDisplayerK8101
 {
     public partial class Form1 : Form
     {
+<<<<<<< HEAD
         SimuDisplayK8101 sdk8101;
+
+=======
+        TcpListener tcpListener;
+>>>>>>> Création methode pour desisner un texte
         public Form1()
         {
             InitializeComponent();
@@ -29,6 +34,7 @@ namespace SimulatorDisplayerK8101
 
             Socket s = this.tcpListener.AcceptSocket();
 
+<<<<<<< HEAD
             listBox1.Items.Add(s.RemoteEndPoint);*/
             sdk8101 = new SimuDisplayK8101(new Point(100, 100), new Size(293, 229));
         }
@@ -46,11 +52,11 @@ namespace SimulatorDisplayerK8101
         private void tsmiQuit_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
+=======
+            listBox1.Items.Add(s.RemoteEndPoint);
 
-        private void tsmiConnect_Click(object sender, EventArgs e)
-        {
 
+>>>>>>> Création methode pour desisner un texte
         }
     }
 }

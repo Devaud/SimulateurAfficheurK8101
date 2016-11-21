@@ -15,9 +15,19 @@ namespace SimulatorDisplayerK8101
         private Brush _brush;
         private Pen _pen;
         private SimuDisplayButtonK8101 _simuButton;
+        private SDKLCDK8101 _simuLCD;
         #endregion
 
         #region Properties
+        /// <summary>
+        /// Get or set the SimuLCD
+        /// </summary>
+        public SDKLCDK8101 SimuLCD
+        {
+            get { return _simuLCD; }
+            set { _simuLCD = value; }
+        }
+
         /// <summary>
         /// Get or set the SimuButton
         /// </summary>
@@ -68,6 +78,7 @@ namespace SimulatorDisplayerK8101
             this.Brush = new SolidBrush(Color.Gray);
             Point locationButton = new Point(location.X + (size.Width / 2 - SimuDisplayButtonK8101.DEFAULT_SIZE.Width / 2), location.Y + 10);
             this.SimuButton = new SimuDisplayButtonK8101(locationButton);
+            this.SimuLCD = new SDKLCDK8101();
         }
         #endregion
 
@@ -81,6 +92,7 @@ namespace SimulatorDisplayerK8101
             pe.Graphics.FillRectangle(this.Brush, this.Rect);
             pe.Graphics.DrawRectangle(this.Pen, this.Rect);
             this.SimuButton.Draw(pe);
+            this.SimuLCD.Draw(pe);
         }
 
         /// <summary>

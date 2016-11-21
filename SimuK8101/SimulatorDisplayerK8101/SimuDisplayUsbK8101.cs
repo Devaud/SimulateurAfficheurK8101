@@ -1,4 +1,10 @@
-﻿using System;
+﻿/* Project : SimulatorK8101
+*  Author : DEVAUD - WACKER
+*  Date : 11.2016
+*  Class : SimuK8101
+*  Description :  Simulation of the connexion USB of the K8101
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;

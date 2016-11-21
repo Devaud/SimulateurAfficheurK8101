@@ -52,6 +52,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SDKLCDK8101.cs" />
     <Compile Include="SimuDisplayButtonK8101.cs" />
     <Compile Include="SimuDisplayK8101.cs" />
     <Compile Include="SimuDisplayUsbK8101.cs" />
