@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -15,7 +16,6 @@ namespace SimulatorDisplayerK8101
     public partial class Form1 : Form
     {
         SimuDisplayK8101 sdk8101;
-
         public Form1()
         {
             InitializeComponent();

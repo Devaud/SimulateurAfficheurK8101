@@ -43,5 +43,11 @@ namespace TestProgram
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Display.DrawText("salut", SimuK8101.TextSize.Small, 10, 10, 10);
+
+        }
     }
 }
