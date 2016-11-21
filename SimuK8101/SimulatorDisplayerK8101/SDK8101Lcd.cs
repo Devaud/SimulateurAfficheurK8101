@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace SimulatorDisplayerK8101
 {
-    public class SDKLCDK8101
+    public class SDK8101Lcd
     {
         #region const
         // It's constant but can't be declared constant
@@ -87,7 +87,7 @@ namespace SimulatorDisplayerK8101
         /// <summary>
         /// Create new SimulatorLCD with default location and default size
         /// </summary>
-        public SDKLCDK8101()
+        public SDK8101Lcd()
             : this(DEFAULT_LOCATION)
         {
 
@@ -97,7 +97,7 @@ namespace SimulatorDisplayerK8101
         /// Create new SimulatorLCD with location and default size
         /// </summary>
         /// <param name="location"></param>
-        public SDKLCDK8101(Point location)
+        public SDK8101Lcd(Point location)
             : this(location, DEFAULT_SIZE)
         {
 
@@ -108,7 +108,7 @@ namespace SimulatorDisplayerK8101
         /// </summary>
         /// <param name="location"></param>
         /// <param name="size"></param>
-        public SDKLCDK8101(Point location, Size size)
+        public SDK8101Lcd(Point location, Size size)
         {
             this.BackColorLcd = new Rectangle(location, size);
             this.Lcd = new Rectangle(new Point(location.X + ADAPTIF_RATER, location.Y + ADAPTIF_RATER), new Size(size.Width - ADAPTIF_RATER * 2, size.Height - ADAPTIF_RATER * 2));

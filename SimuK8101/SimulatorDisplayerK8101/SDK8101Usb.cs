@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * Projet      : SimulatorDisplayerK8101
+ * Description : Simulate fonctionnalities of the Velleman K8101 display.
+ * Author      : Devaud Alan & Dylan Wacker
+ * Date        : 21.11.2016
+ * Version     : 1.0
+ */
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +37,7 @@ namespace SimulatorDisplayerK8101
         /// </summary>
         public bool IsConnected
         {
-            get { return this.ClientConnected.Connected; }
+            get { return (this.ClientConnected != null) ? this.ClientConnected.Connected : false; }
         }
 
         /// <summary>

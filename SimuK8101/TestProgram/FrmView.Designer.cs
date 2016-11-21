@@ -1,6 +1,6 @@
 ﻿namespace TestProgram
 {
-    partial class Form1
+    partial class FrmView
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -34,9 +34,10 @@
             // 
             // btnSendMessage
             // 
-            this.btnSendMessage.Location = new System.Drawing.Point(12, 38);
+            this.btnSendMessage.Location = new System.Drawing.Point(16, 47);
+            this.btnSendMessage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSendMessage.Name = "btnSendMessage";
-            this.btnSendMessage.Size = new System.Drawing.Size(209, 23);
+            this.btnSendMessage.Size = new System.Drawing.Size(279, 28);
             this.btnSendMessage.TabIndex = 0;
             this.btnSendMessage.Text = "Send Message";
             this.btnSendMessage.UseVisualStyleBackColor = true;
@@ -44,20 +45,22 @@
             // 
             // tbxMessage
             // 
-            this.tbxMessage.Location = new System.Drawing.Point(12, 12);
+            this.tbxMessage.Location = new System.Drawing.Point(16, 15);
+            this.tbxMessage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbxMessage.Name = "tbxMessage";
-            this.tbxMessage.Size = new System.Drawing.Size(209, 20);
+            this.tbxMessage.Size = new System.Drawing.Size(277, 22);
             this.tbxMessage.TabIndex = 1;
             // 
-            // Form1
+            // FrmView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(491, 408);
+            this.ClientSize = new System.Drawing.Size(655, 502);
             this.Controls.Add(this.tbxMessage);
             this.Controls.Add(this.btnSendMessage);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "FrmView";
+            this.Text = "Test programme";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

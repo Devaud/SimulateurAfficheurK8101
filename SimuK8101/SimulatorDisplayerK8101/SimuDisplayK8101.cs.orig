@@ -1,11 +1,4 @@
-﻿/*
- * Projet      : SimulatorDisplayerK8101
- * Description : Simulate fonctionnalities of the Velleman K8101 display.
- * Author      : Devaud Alan & Dylan Wacker
- * Date        : 21.11.2016
- * Version     : 1.0
- */
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -21,29 +14,31 @@ namespace SimulatorDisplayerK8101
         private Rectangle _rect;
         private Brush _brush;
         private Pen _pen;
+<<<<<<< HEAD
+        private SimuDisplayButtonK8101 _simuButton;
+        private SDKLCDK8101 _simuLCD;
+=======
         private SDK8101Button _simuButton;
         private SDK8101Usb _simuUsb;
-        private SDK8101Lcd _simuLCD;
+>>>>>>> Connexion socket du SimulatorDisplayerK8101 : OK
         #endregion
 
         #region Properties
         /// <summary>
-        /// Get if the client is connected
+<<<<<<< HEAD
+        /// Get or set the SimuLCD
+        /// </summary>
+        public SDKLCDK8101 SimuLCD
+        {
+            get { return _simuLCD; }
+            set { _simuLCD = value; }
+=======
+        /// Get if is connected
         /// </summary>
         public bool IsConnected
         {
             get { return this.SimuUsb.IsConnected; }
         }
-
-        /// <summary>
-        /// Get or set the SimuLCD
-        /// </summary>
-        public SDK8101Lcd SimuLCD
-        {
-            get { return _simuLCD; }
-            set { _simuLCD = value; }
-        }
-
         /// <summary>
         /// Get or set the SimuUsb
         /// </summary>
@@ -51,6 +46,7 @@ namespace SimulatorDisplayerK8101
         {
             get { return _simuUsb; }
             set { _simuUsb = value; }
+>>>>>>> Connexion socket du SimulatorDisplayerK8101 : OK
         }
 
         /// <summary>
@@ -101,10 +97,15 @@ namespace SimulatorDisplayerK8101
             this.Rect = new Rectangle(location, size);
             this.Pen = new Pen(Color.Black, 2);
             this.Brush = new SolidBrush(Color.Gray);
+<<<<<<< HEAD
+            Point locationButton = new Point(location.X + (size.Width / 2 - SimuDisplayButtonK8101.DEFAULT_SIZE.Width / 2), location.Y + 10);
+            this.SimuButton = new SimuDisplayButtonK8101(locationButton);
+            this.SimuLCD = new SDKLCDK8101();
+=======
             Point locationButton = new Point(location.X + (size.Width / 2 - SDK8101Button.DEFAULT_SIZE.Width / 2), location.Y + 10);
             this.SimuButton = new SDK8101Button(locationButton);
-            this.SimuLCD = new SDK8101Lcd();
             this.SimuUsb = new SDK8101Usb();
+>>>>>>> Connexion socket du SimulatorDisplayerK8101 : OK
         }
         #endregion
 
